@@ -1,0 +1,13 @@
+{
+  "name": "daily-fortune-blend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "generate": "node scripts/generate-static-data.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

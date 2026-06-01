@@ -1,0 +1,131 @@
+{
+  "timezone": "Asia/Tokyo",
+  "sources": [
+    {
+      "id": "demo-hoshi",
+      "name": "デモ星占い",
+      "type": "static",
+      "weight": 1,
+      "enabled": false,
+      "note": "外部接続なしで動作確認するための内蔵ソースです。"
+    },
+    {
+      "id": "demo-tarot",
+      "name": "デモタロット",
+      "type": "static",
+      "weight": 1,
+      "enabled": false,
+      "note": "外部接続なしで動作確認するための内蔵ソースです。"
+    },
+    {
+      "id": "demo-numerology",
+      "name": "デモ数秘",
+      "type": "static",
+      "weight": 1,
+      "enabled": false,
+      "note": "外部接続なしで動作確認するための内蔵ソースです。"
+    },
+    {
+      "id": "dmenu-ranking",
+      "name": "dメニュー 12星座占い",
+      "type": "ranked-html",
+      "enabled": true,
+      "weight": 1,
+      "rankTotal": 12,
+      "timeoutMs": 9000,
+      "allowLegacyTls": true,
+      "url": "https://service.smt.docomo.ne.jp/portal/fortune/src/fortune_ranking.html",
+      "blockStartRegex": "ランキング",
+      "note": "ランキングページから当日の順位と短い本文を取得します。"
+    },
+    {
+      "id": "lunarie-ranking",
+      "name": "ルナリエ 今日の星座占い",
+      "type": "ranked-html",
+      "enabled": true,
+      "weight": 1,
+      "rankTotal": 12,
+      "timeoutMs": 9000,
+      "url": "https://lunarie.jp/horoscope/",
+      "blockStartRegex": "今日の星座ランキング",
+      "blockEndRegex": "最終更新日時",
+      "note": "ランキングページから当日の順位と短い本文を取得します。"
+    },
+    {
+      "id": "goisunet-ranking",
+      "name": "GoisuNet 今日の運勢",
+      "type": "ranked-html",
+      "enabled": true,
+      "weight": 1,
+      "rankTotal": 12,
+      "timeoutMs": 9000,
+      "url": "https://goisu.net/daily/",
+      "blockStartRegex": "今日の運勢",
+      "blockEndRegex": "スポンサー",
+      "note": "ランキングページから当日の順位と短い本文を取得します。"
+    },
+    {
+      "id": "urashiru-ranking",
+      "name": "ウラシル 星座占い",
+      "type": "ranked-html",
+      "enabled": true,
+      "weight": 1,
+      "rankTotal": 12,
+      "timeoutMs": 9000,
+      "url": "https://urashiru.com/horoscope/",
+      "allowBareSignRank": true,
+      "blockStartRegex": "星座占い一覧",
+      "blockEndRegex": "星座占いとは",
+      "note": "一覧ページから今日の順位を取得します。"
+    },
+    {
+      "id": "unkoi-ranking",
+      "name": "うらなえる 今日の運勢",
+      "type": "ranked-html",
+      "enabled": true,
+      "weight": 1,
+      "rankTotal": 12,
+      "timeoutMs": 9000,
+      "url": "https://unkoi.com/fortune-luck/dailyranking",
+      "blockStartRegex": "今日の運勢",
+      "note": "12星座ランキングページから順位を取得します。"
+    },
+    {
+      "id": "enjyo-ranking",
+      "name": "ENJYO 今日の運勢",
+      "type": "ranked-html",
+      "enabled": true,
+      "weight": 1,
+      "rankTotal": 12,
+      "timeoutMs": 9000,
+      "url": "https://djm.jp/daily-fortune-ranking/",
+      "blockStartRegex": "今日の運勢",
+      "blockEndRegex": "週間占い",
+      "note": "12星座ランキングページから順位を取得します。"
+    },
+    {
+      "id": "sample-json-api",
+      "name": "JSON占いAPIサンプル",
+      "type": "json",
+      "enabled": false,
+      "weight": 1,
+      "url": "https://example.com/api/fortune?date={date}&sign={sign}",
+      "scorePath": "score",
+      "textPath": "message",
+      "rankPath": "rank",
+      "rankTotalPath": "total",
+      "note": "実在のAPIを使う場合はURLと取得パスを変更し、enabledをtrueにしてください。"
+    },
+    {
+      "id": "sample-html-page",
+      "name": "HTML占いページサンプル",
+      "type": "html",
+      "enabled": false,
+      "weight": 1,
+      "url": "https://example.com/fortune/{sign}/{date}",
+      "scoreRegex": "score[\"'\\s:=-]+(\\d{1,3})",
+      "textRegex": "<p class=\"fortune\">([\\s\\S]*?)</p>",
+      "note": "スクレイピングは相手サイトの規約を確認してから有効化してください。"
+    }
+  ]
+}
