@@ -1,0 +1,9 @@
+{
+  "name": "今日の運勢ブレンド",
+  "short_name": "運勢ブレンド",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdf8",
+  "theme_color": "#0f766e",
+  "lang": "ja"
+}
